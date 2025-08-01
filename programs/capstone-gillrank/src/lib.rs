@@ -17,7 +17,6 @@ declare_id!("VS9y7jwTSYpmKzgTwckAFibhGyvuEWqgMXQf21ehAXq");
 
 #[program]
 pub mod capstone_gillrank {
-
     use super::*;
 
     pub fn create_user_profile(ctx: Context<CreateUserProfile>) ->Result<()> {
