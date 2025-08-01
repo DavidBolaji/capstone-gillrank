@@ -1,3 +1,7 @@
+#![allow(unexpected_cfgs)]
+#![allow(deprecated)]
+#![allow(unused_imports)]
+
 pub mod constants;
 pub mod error;
 pub mod instructions;
@@ -13,9 +17,12 @@ declare_id!("VS9y7jwTSYpmKzgTwckAFibhGyvuEWqgMXQf21ehAXq");
 
 #[program]
 pub mod capstone_gillrank {
+
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        initialize::handler(ctx)
+    pub fn create_user_profile(ctx: Context<CreateUserProfile>) ->Result<()> {
+        let bumps = ctx.bumps;
+        ctx.accounts.create(&bumps)?;
+        Ok(())
     }
 }
